@@ -4,18 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Song#</title>
-  <link rel="stylesheet" href="./vendors/slick/slick.css">
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-
-
-  <script>
-    require('jquery')
-    require('bootstrap')
-    require('slick')
-  </script>
-
+  <link rel="stylesheet" href="./vendors/slick/slick.css"/>
+  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+  <style>
+  .songs-sidebar {
+    max-height: 750px;
+    overflow-y: auto;
+  }
+  </style>
 </head>
-
 <body>
   <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Song#</a>
@@ -28,31 +25,21 @@
   </nav>
   <div class="container-fluid">
     <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <nav class="col-md-3 col-lg-2 d-none d-md-block bg-light sidebar songs-sidebar">
         <div class="sidebar-sticky">
           <hr />
           <hr />
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
-                  <line x1="16" y1="13" x2="8" y2="13"></line>
-                  <line x1="16" y1="17" x2="8" y2="17"></line>
-                  <polyline points="10 9 9 9 8 9"></polyline></svg>
-                Tu Gracia <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
+          <ul id="songsList" class="nav flex-column">
+            <li>
               <a class="nav-link" href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <polyline
+                    points="14 2 14 8 20 8"></polyline>
                   <line x1="16" y1="13" x2="8" y2="13"></line>
                   <line x1="16" y1="17" x2="8" y2="17"></line>
                   <polyline points="10 9 9 9 8 9"></polyline></svg>
-                Cuando Alla se Pase lista
+                Songs
               </a>
             </li>
           </ul>
@@ -62,7 +49,7 @@
         <hr />
         <hr />
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Tu Gracia</h1>
+          <h1 id="songTitle" class="h2">Choose a Song</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -76,17 +63,17 @@
           </div>
         </div>
         <div class="form-group">
-          <textarea class="form-control" rows="25"></textarea>
+          <textarea id="songBody" class="form-control" rows="25"></textarea>
         </div>
       </main>
-
     </div>
-
   </div>
-  <script>
-    // You can also require other files to run in this process
-    require('./renderer.js')
-  </script>
 </body>
 
+<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+<script>
+    require('bootstrap')
+    require('slick')
+    require('./core.js')
+  </script>
 </html>
